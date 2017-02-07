@@ -1,0 +1,82 @@
+$cellSize: 15px;
+$bg: #344661;
+$alive: #eeba30;
+$old: #C39928;
+$cellColor: #081E3F;
+$genColor: #7A535A;
+$textShadow: #333;
+
+body {
+  background: $bg;
+  background: $bg linear-gradient($bg, $bg + 20, $bg);
+}
+
+.cell {
+  background: $cellColor;
+  width: $cellSize;
+  height: $cellSize;
+  border: 1px solid #5c5c5c;
+  margin: 0;
+  padding: 0;
+  float:left;
+}
+
+.alive {
+  background: $alive;
+}
+
+.alive.old {
+  background: $old;
+}
+
+#board {
+  width: 675px;
+}
+
+.generations {
+  color: $old + 50;
+  font-size: 1.5em;
+  text-shadow: 1px 2px 3px $textShadow;
+  .counter {
+    color: $alive;
+  }
+}
+
+.btn-group {
+  background: $bg linear-gradient($bg, $bg + 20, $bg);
+  .btn-default {
+    color: #333;
+    border-color: $genColor;
+    text-shadow: 0 1px 0 $alive;
+    background: $old linear-gradient(to bottom, $alive 0, $alive - 50 100%);
+
+    &.active {
+      border-color: $genColor;
+      background: $alive - 60 none;
+    }
+
+    &:hover {
+      background: $alive - 50 none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.text-primary {
+  font-size: 3.5em;
+  font-family: Arial, cursive;
+  color: $old;
+  text-shadow: 4px 4px 10px $textShadow;
+}
+
+#footerText {
+  color: $old - 50;
+  text-shadow: 4px 4px 10px $textShadow;
+
+  a {
+    color: $old;
+  }
+}
